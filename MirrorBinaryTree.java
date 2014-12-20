@@ -36,16 +36,10 @@ public class MirrorBinaryTree {
     }
     public boolean isSymmetric(TreeNode left, TreeNode right)
     {
-        if(left==null && right==null)
-            return true;
         if(left==null || right==null)
-            return false;
+            return (left==right);
         if(left.val!=right.val)
             return false;
-        if(!isSymmetric(left.left,right.right))
-            return false;
-        if(!isSymmetric(left.right,right.left))
-            return false;
-        return true;
+        return (isSymmetric(left.left,right.right) && isSymmetric(left.right,right.left));
     }
 }
