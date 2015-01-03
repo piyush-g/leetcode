@@ -26,8 +26,21 @@ public class ExcelColomnToNumber {
 		}
 		return val;
   }
+
+  public static String convertToTitle(int n) {
+    StringBuffer sb = new StringBuffer();
+    char ch;
+    while(n>0)
+    {
+      ch = (char) ((n-1)%26 + 'A');
+      sb.insert(0,ch);
+      n=n/26;
+    }
+    return sb.toString();
+    }
+
   public static void main (String[] args)
   {
-   	System.out.println("Value of BA "+titleToNumber("BA"));
+   	System.out.println("Value of 535 "+convertToTitle(535));
   }
 }
